@@ -26,7 +26,7 @@ header img {
   height: 80px; 
   min-width: 200px;
   display: block;
-  aspect-ratio: 4.5 / 1;
+  aspect-ratio: 550 x 119;
 }
 
 article {
@@ -75,7 +75,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
   max-width: 1200px;
   margin: 20px auto;
@@ -85,7 +85,7 @@ section {
 
 section>div {
   flex: 1;
-  max-width: 1000px;
+  max-width: 600px;
   margin: 5px auto;
 }
 
@@ -100,6 +100,8 @@ section>img {
   background-color: #1a1a1a;
   aspect-ratio: 1.4 / 1;
   margin: 20px auto;
+  object-fit: cover;
+  display: block;
 }
 
 .toptext {
@@ -299,12 +301,7 @@ nav a:hover {
     box-sizing: border-box;
   }
 
-  section>div,
-  section>img {
-    max-width: 90%;
-    margin: 20px auto;
-
-  }
+ 
   .toptext {
     margin-left: 0;
     text-align: center;
