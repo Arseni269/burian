@@ -71,3 +71,18 @@ lightbox.addEventListener('click', (e) => {
     lightbox.classList.remove('active');
   }
 });
+
+const bioImg = document.querySelector('section > img');
+if (bioImg) {
+    bioImg.style.opacity = '0';
+    bioImg.style.transition = 'opacity 0.8s ease-in';
+    
+    bioImg.onload = () => {
+        bioImg.style.opacity = '1';
+    };
+    
+    // If the image is already cached by the browser
+    if (bioImg.complete) {
+        bioImg.style.opacity = '1';
+    }
+}

@@ -21,6 +21,14 @@ header {
   box-sizing: border-box;
 }
 
+header img {
+  width: auto;
+  height: 80px; 
+  min-width: 200px;
+  display: block;
+  aspect-ratio: 4.5 / 1;
+}
+
 article {
   display: flex;
   align-items: center;
@@ -77,15 +85,21 @@ section {
 
 section>div {
   flex: 1;
-  max-width: 600px;
+  max-width: 1000px;
+  margin: 5px auto;
 }
 
 section>img {
-  flex: 0 1 auto;
+  flex: 0 1 400px;
   max-width: 800px;
   height: auto;
+  width: 100%;
+  max-width: 600px;
   margin-top: 25px;
   border-radius: 8px;
+  background-color: #1a1a1a;
+  aspect-ratio: 1.4 / 1;
+  margin: 20px auto;
 }
 
 .toptext {
@@ -121,6 +135,7 @@ nav {
   max-width: 100%;
   z-index: 100;
   background-color: #000000;
+  height: 60px;
 }
 
 nav ul {
@@ -157,6 +172,7 @@ nav a:hover {
 }
 
 .grid-container {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 15px;
@@ -168,6 +184,7 @@ nav a:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 .grid-item {
   width: 100%;
   height: 250px;
@@ -237,8 +254,8 @@ nav a:hover {
 
 @media (max-width: 600px) {
   header {
-    flex-direction: row !important;
-    height: auto !important;
+    flex-direction: row;
+    height: auto;
     padding: 20px 0;
     gap: 10px;
     width: 100%;
@@ -268,13 +285,15 @@ nav a:hover {
   }
 
   header img {
-    max-width: 80% !important;
+    max-width: 80%;
     height: auto;
     margin: 10px auto;
+    min-height: 80px;
+    display: block;
   }
 
   section {
-    flex-direction: column !important;
+    flex-direction: column;
     padding: 15px;
     width: 100%;
     box-sizing: border-box;
