@@ -14,9 +14,12 @@ const gallerySettings = {
 
 function updateLightbox(index) {
   currentImgIndex = index;
-  let fileName = currentImgIndex.toString().padStart(2, '0');
-  lightboxImg.src = `landscapes/01-${fileName}.jpg`;
-  lightboxCaption.innerText = `Landscape ${fileName}`;
+  let fileName = index.toString().padStart(2, '0');
+  
+  // Use the settings we gathered from the <body> tag!
+  let fullPath = `${gallerySettings.folder}/${gallerySettings.prefix}${fileName}.jpg`;
+  
+  lightboxImg.src = fullPath;
 }
 
 if (grid) {
@@ -30,7 +33,7 @@ if (grid) {
 
         img.addEventListener('click', () => {
             lightbox.classList.add('active');
-            updateLightbox(i, gallerySettings); // Pass settings here
+            updateLightbox(i, gallerySettings);
         });
         grid.appendChild(img);
     }
@@ -77,7 +80,6 @@ if (bioImg) {
         bioImg.style.opacity = '1';
     };
     
-    // If the image is already cached by the browser
     if (bioImg.complete) {
         bioImg.style.opacity = '1';
     }
