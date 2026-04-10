@@ -29,6 +29,22 @@ header img {
   aspect-ratio: 550 x 119;
 }
 
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px;
+  font-size: 30px;
+}
+.contactlink {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  justify-content: space-around;
+}
+
 article {
   display: flex;
   align-items: center;
@@ -76,8 +92,8 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  max-width: 1200px;
+  gap: 100px;
+  max-width: 1400px;
   margin: 20px auto;
   padding: 20px;
   color: white;
