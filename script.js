@@ -7,47 +7,51 @@ let currentImgIndex = 1;
 const totalImages = 30;
 
 const gallerySettings = {
-    folder: document.body.getAttribute('data-folder') || 'landscapes',
-    total: parseInt(document.body.getAttribute('data-total')) || 30,
-    prefix: document.body.getAttribute('data-prefix') || '01-'
+  folder: document.body.getAttribute('data-folder') || 'landscapes',
+  total: parseInt(document.body.getAttribute('data-total')) || 30,
+  prefix: document.body.getAttribute('data-prefix') || '01-'
 };
 
 function updateLightbox(index) {
   currentImgIndex = index;
-  let fileName = currentImgIndex.toString().padStart(2, '0');
-  lightboxImg.src = `landscapes/01-${fileName}.jpg`;
-  lightboxCaption.innerText = `Landscape ${fileName}`;
+  let fileName = index.toString().padStart(2, '0');
+  
+  let fullPath = `${gallerySettings.folder}/${gallerySettings.prefix}${fileName}.jpg`;
+  
+  lightboxImg.src = fullPath;
+  lightboxCaption.innerText = `${gallerySettings.folder} ${fileName}`;
 }
 
 if (grid) {
-    for (let i = 1; i <= gallerySettings.total; i++) {
-        let fileName = i.toString().padStart(2, '0');
-        let fullPath = `${gallerySettings.folder}/${gallerySettings.prefix}${fileName}.jpg`;
+  for (let i = 1; i <= gallerySettings.total; i++) {
+    let fileName = i.toString().padStart(2, '0');
+    let fullPath = `${gallerySettings.folder}/${gallerySettings.prefix}${fileName}.jpg`;
 
-        const img = document.createElement('img');
-        img.src = fullPath;
-        img.className = 'grid-item';
+    const img = document.createElement('img');
+    img.src = fullPath;
+    img.className = 'grid-item';
 
-        img.addEventListener('click', () => {
-            lightbox.classList.add('active');
-            updateLightbox(i, gallerySettings); // Pass settings here
-        });
-        grid.appendChild(img);
-    }
+    img.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      updateLightbox(i);
+    });
+    grid.appendChild(img);
+  }
 }
 const showNext = () => {
   let next = currentImgIndex + 1;
-  if (next > totalImages) next = 1;
+  if (next > gallerySettings.total) next = 1;
   updateLightbox(next);
 };
+
 const showPrev = () => {
   let prev = currentImgIndex - 1;
-  if (prev < 1) prev = totalImages;
+  if (prev < 1) prev = gallerySettings.total;
   updateLightbox(prev);
 };
 
-document.getElementById('next-btn').onclick = showNext;
-document.getElementById('prev-btn').onclick = showPrev;
+document.getElementById('next-btn').onclick = (e) => { e.stopPropagation(); showNext(); };
+document.getElementById('prev-btn').onclick = (e) => { e.stopPropagation(); showPrev(); };
 closeBtn.onclick = () => lightbox.classList.remove('active');
 
 document.addEventListener('keydown', (e) => {
