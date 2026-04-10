@@ -12,7 +12,7 @@ body {
 header {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
   margin: 15px;
@@ -23,7 +23,7 @@ header {
 
 header img {
   width: auto;
-  height: 80px; 
+  height: 120px; 
   min-width: 200px;
   display: block;
   aspect-ratio: 550 x 119;
