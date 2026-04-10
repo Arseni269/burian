@@ -1,6 +1,10 @@
+
 body {
   font-family: sans-serif;
-  padding: 10px;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #000000;
   margin-bottom: 20px;
 }
@@ -13,6 +17,8 @@ header {
   justify-content: center;
   margin: 15px;
   color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 article {
@@ -226,7 +232,7 @@ nav a:hover {
 
 @media (max-width: 600px) {
   header {
-    flex-direction: column !important;
+    flex-direction: row !important;
     height: auto !important;
     padding: 20px 0;
     gap: 10px;

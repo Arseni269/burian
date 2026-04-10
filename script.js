@@ -6,6 +6,11 @@ const closeBtn = document.getElementById('close-btn');
 let currentImgIndex = 1;
 const totalImages = 30;
 
+const gallerySettings = {
+    folder: document.body.getAttribute('data-folder') || 'landscapes',
+    total: parseInt(document.body.getAttribute('data-total')) || 30,
+    prefix: document.body.getAttribute('data-prefix') || '01-'
+};
 
 function updateLightbox(index) {
   currentImgIndex = index;
@@ -14,24 +19,22 @@ function updateLightbox(index) {
   lightboxCaption.innerText = `Landscape ${fileName}`;
 }
 
-for (let i = 1; i <= 30; i++) {
-  let fileName = i.toString().padStart(2, '0');
-  const img = document.createElement('img');
+if (grid) {
+    for (let i = 1; i <= gallerySettings.total; i++) {
+        let fileName = i.toString().padStart(2, '0');
+        let fullPath = `${gallerySettings.folder}/${gallerySettings.prefix}${fileName}.jpg`;
 
-  img.src = `landscapes/01-${fileName}.jpg`;
-  img.alt = `Landscape ${fileName}`;
-  img.className = 'grid-item';
+        const img = document.createElement('img');
+        img.src = fullPath;
+        img.className = 'grid-item';
 
-  img.addEventListener('click', () => {
-    lightbox.classList.add('active');
-    lightboxImg.src = img.src;
-    lightboxCaption.innerText = img.alt;
-    updateLightbox(i);
-  });
-
-  grid.appendChild(img);
+        img.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            updateLightbox(i, gallerySettings); // Pass settings here
+        });
+        grid.appendChild(img);
+    }
 }
-
 const showNext = () => {
   let next = currentImgIndex + 1;
   if (next > totalImages) next = 1;
