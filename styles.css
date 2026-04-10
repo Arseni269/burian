@@ -222,3 +222,45 @@ nav a:hover {
 #next-btn {
   right: 10px;
 }
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  header h3 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  header img {
+    max-width: 90vw;
+    height: auto;
+  }
+
+  section>div,
+  section>img {
+    max-width: 100%;
+
+  }
+  .toptext {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  #close-btn {
+    right: 20px;
+    font-size: 40px;
+  }
+
+  .nav-btn {
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .lightbox-img {
+    max-width: 95%;
+  }
+}
