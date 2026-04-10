@@ -39,12 +39,12 @@ if (grid) {
 }
 const showNext = () => {
   let next = currentImgIndex + 1;
-  if (next > totalImages) next = 1;
+  if (next > gallerySettings.total) next = 1; 
   updateLightbox(next);
 };
 const showPrev = () => {
   let prev = currentImgIndex - 1;
-  if (prev < 1) prev = totalImages;
+  if (prev < gallerySettings.total) prev = 1;
   updateLightbox(prev);
 };
 
