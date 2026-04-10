@@ -39,7 +39,7 @@ const showNext = () => {
 };
 const showPrev = () => {
   let prev = currentImgIndex - 1;
-  if (prev < 1) prev = totalImages; // Loop to end
+  if (prev < 1) prev = totalImages;
   updateLightbox(prev);
 };
 
@@ -48,11 +48,11 @@ document.getElementById('prev-btn').onclick = showPrev;
 closeBtn.onclick = () => lightbox.classList.remove('active');
 
 document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
+  if (!lightbox.classList.contains('active')) return;
 
-    if (e.key === "ArrowRight") showNext();
-    if (e.key === "ArrowLeft") showPrev();
-    if (e.key === "Escape") lightbox.classList.remove('active');
+  if (e.key === "ArrowRight") showNext();
+  if (e.key === "ArrowLeft") showPrev();
+  if (e.key === "Escape") lightbox.classList.remove('active');
 });
 
 closeBtn.onclick = () => {
@@ -60,9 +60,7 @@ closeBtn.onclick = () => {
 };
 
 lightbox.addEventListener('click', (e) => {
-    // Check if the thing actually clicked was the lightbox background
-    // and NOT the image or the buttons inside it
-    if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-    }
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+  }
 });
