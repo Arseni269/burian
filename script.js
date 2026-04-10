@@ -16,7 +16,6 @@ function updateLightbox(index) {
   currentImgIndex = index;
   let fileName = index.toString().padStart(2, '0');
   
-  // Use the settings we gathered from the <body> tag!
   let fullPath = `${gallerySettings.folder}/${gallerySettings.prefix}${fileName}.jpg`;
   
   lightboxImg.src = fullPath;
