@@ -190,9 +190,9 @@ nav a {
   display: inline-block;
 }
 
-nav a:hover {
+/* nav a:hover {
   opacity: 0.8;
-}
+} */
 
 .thumb:hover,
 .thumb.active {
@@ -371,6 +371,5 @@ nav a:hover {
     cursor: default;
     pointer-events: none;
     opacity: 1 !important;
-    font-weight: bold;
     border-bottom: 2px solid; 
 }
