@@ -171,11 +171,6 @@ ul li a {
   text-decoration: none;
 }
 
-/* ul li a:hover {
-  background-color: #606d87;
-  border-radius: 12px
-}*/
-
 nav {
   position: sticky;
   top: 0;
@@ -380,6 +375,33 @@ nav li:nth-child(6) a:hover { color: #ef9700; }
 
 #next-btn {
   right: 10px;
+}
+
+footer {
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 0px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.email-link {
+    font-size: 24px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #a25fff;
 }
 
 @media (max-width: 600px) {
