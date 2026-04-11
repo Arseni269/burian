@@ -55,7 +55,7 @@ header img {
 
 .toptext {
     color: #ffffff;
-    padding-left: 51px;
+    padding: left;
 }
 
 .contact {
@@ -115,7 +115,7 @@ h3 {
 }
 
 .malir {
-  color: #2f46de;
+  color: #7c8dfd;
 }
 
 .grafik {
@@ -144,7 +144,7 @@ section > div {
 
 section>img {
   flex: 0 1 400px;
-  max-width: 800px;
+  max-width: 900px;
   height: auto;
   width: 100%;
   max-width: 600px;
@@ -294,7 +294,7 @@ nav li:nth-child(6) a:hover { color: #ef9700; }
   gap: 15px;
   width: 95%;
   max-width: 1500px;
-  margin: 20px auto;
+  margin: 30px auto;
 }
 
 .grid-item {
