@@ -11,11 +11,10 @@ const gallerySettings = {
   total: parseInt(document.body.getAttribute('data-total')),
   prefix: document.body.getAttribute('data-prefix') || '01-'
 };
-
+const navLinks = document.querySelectorAll('.nav-link');
 document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname.split("/").pop();
-  
-  const navLinks = document.querySelectorAll('.nav-link');
+ 
 
   navLinks.forEach(link => {
     if (link.getAttribute('href') === currentPath) {

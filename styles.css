@@ -6,7 +6,7 @@ body {
   font-family: sans-serif;
   overflow-x: hidden;
   width: 100%;
-  margin: 0;
+  margin: 20px 0;
   padding: 0;
   background-color: #000000;
   margin-bottom: 5px;
@@ -18,7 +18,7 @@ header {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 15px;
+  margin: 5px;
   color: #ffffff;
   width: 100%;
   box-sizing: border-box;
@@ -27,13 +27,34 @@ header {
 header img {
   width: auto;
   height: 120px;
-  min-width: 200px;
   display: block;
-  aspect-ratio: 550 x 119;
+  aspect-ratio: 550 / 119;
+}
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.headertext {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.signature-logo {
+    display: block;
+    margin: 20px auto;
+
+}
+
+.subtitle {
+    color: #ffffff !important;
+    margin-top: 10px; 
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.toptext {
+    color: #ffffff;
 }
 
 .contact {
@@ -183,16 +204,79 @@ nav a {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   font-size: 20px;
   font-weight: 500;
-  transition: opacity 0.7s, color 0.3s;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
   text-decoration: none;
-  display: inline-block;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
 }
 
-/* nav a:hover {
-  opacity: 0.8;
-} */
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 8px;
+    display: inline-block !important;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    opacity: 1;
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out, color 0.3s ease;
+}
+
+nav li:nth-child(2) a:hover { color: #30b5f8; }
+nav li:nth-child(3) a:hover { color: #f895e2; }
+nav li:nth-child(4) a:hover { color: #bd21fa; }
+nav li:nth-child(5) a:hover { color: #139c0c; }
+nav li:nth-child(6) a:hover { color: #ef9700; } 
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-link.active {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+.nav-link.active::after {
+    transform: scaleX(1) !important;
+    background-color: currentColor !important;
+}
+
+.active-landscapes { color: #30b5f8 !important; }
+.active-eros       { color: #f895e2 !important; }
+.active-violet     { color: #bd21fa !important; }
+.active-muse       { color: #139c0c !important; }
+.active-other      { color: #ef9700 !important; }
+.active-homepage   { color: #ffffff !important; }
 
 .thumb:hover,
 .thumb.active {
@@ -207,7 +291,7 @@ nav a {
   gap: 15px;
   width: 95%;
   max-width: 1500px;
-  margin: 15px auto;
+  margin: 20px auto;
 }
 
 .grid-item {
@@ -323,10 +407,34 @@ nav a {
   }
 
   nav a {
-    font-size: 14px !important;
-    padding: 8px 10px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    
+    background-color: currentColor; 
+    
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
   nav li {
     margin: 5px;
   }
@@ -348,8 +456,9 @@ nav a {
 
 
   .toptext {
-    margin-left: 0;
     text-align: center;
+    color: white;
+    z-index: 200;
   }
 
   #close-btn {
@@ -366,10 +475,4 @@ nav a {
     max-width: 95%;
   }
 
-}
-.nav-link.active {
-    cursor: default;
-    pointer-events: none;
-    opacity: 1 !important;
-    border-bottom: 2px solid; 
 }
