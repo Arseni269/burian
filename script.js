@@ -3,14 +3,26 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCaption = document.getElementById('lightbox-caption');
 const closeBtn = document.getElementById('close-btn');
+
 let currentImgIndex = 1;
-const totalImages = 30;
 
 const gallerySettings = {
-  folder: document.body.getAttribute('data-folder') || 'landscapes',
-  total: parseInt(document.body.getAttribute('data-total')) || 30,
+  folder: document.body.getAttribute('data-folder'),
+  total: parseInt(document.body.getAttribute('data-total')),
   prefix: document.body.getAttribute('data-prefix') || '01-'
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPath = window.location.pathname.split("/").pop();
+  
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+});
 
 function updateLightbox(index) {
   currentImgIndex = index;
@@ -52,7 +64,7 @@ const showNext = () => {
 };
 const showPrev = () => {
   let prev = currentImgIndex - 1;
-  if (prev < gallerySettings.total) prev = 1;
+  if (prev < 1) prev = gallerySettings.total;
   updateLightbox(prev);
 };
 
