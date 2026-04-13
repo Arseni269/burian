@@ -102,3 +102,44 @@ if (bioImg) {
     bioImg.style.opacity = '1';
   }
 }
+
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  const scrollHeight = document.documentElement.scrollHeight;
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const clientHeight = document.documentElement.clientHeight;
+
+  const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
+
+  if (distanceFromBottom < 800 && scrollTop > 200) {
+    backToTopBtn.style.opacity = "1";
+    backToTopBtn.style.visibility = "visible";
+  } else {
+    backToTopBtn.style.opacity = "0";
+    backToTopBtn.style.visibility = "hidden";
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const navbar = document.querySelector('nav');
+const headerImage = document.querySelector('.signature-logo');
+
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+}, { 
+  threshold: 0,
+  rootMargin: "-50px 0px 0px 0px" 
+});
+
+scrollObserver.observe(headerImage);
+
