@@ -81,10 +81,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === "Escape") lightbox.classList.remove('active');
 });
 
-closeBtn.onclick = () => {
-  lightbox.classList.remove('active');
-};
-
 lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) {
     lightbox.classList.remove('active');
