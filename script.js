@@ -103,22 +103,6 @@ if (bioImg) {
 
 const backToTopBtn = document.getElementById("backToTop");
 
-window.addEventListener("scroll", () => {
-  const scrollHeight = document.documentElement.scrollHeight;
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  const clientHeight = document.documentElement.clientHeight;
-
-  const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
-
-  if (distanceFromBottom < 800 && scrollTop > 200) {
-    backToTopBtn.style.opacity = "1";
-    backToTopBtn.style.visibility = "visible";
-  } else {
-    backToTopBtn.style.opacity = "0";
-    backToTopBtn.style.visibility = "hidden";
-  }
-});
-
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });

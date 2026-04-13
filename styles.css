@@ -95,8 +95,8 @@ header {
 article {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  justify-content: flex-start; 
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 5px;
   color: #ffffff;
   width: 100%;
@@ -408,12 +408,17 @@ nav li:nth-child(6) a:hover {
 }
 
 footer {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
   width: 100%;
   position: relative;
   padding: 3px 0px 20px 0px;
   margin-top: 0px;
   border-top: 1px solid #333;
-  text-align: center;
 }
 
 .footer-content p {
@@ -534,13 +539,13 @@ footer {
   }
 
   h1.toptext {
-  font-size: 42px;
-  margin-top: 0;
-  margin-left: 0 !important; 
-  padding-left: 0;           
-  width: auto;             
-  display: inline-block;   
-}
+    font-size: 42px;
+    margin-top: 0;
+    margin-left: 0 !important;
+    padding-left: 0;
+    width: auto;
+    display: inline-block;
+  }
 
   #close-btn {
     right: 20px;
@@ -561,9 +566,9 @@ footer {
     width: 100%;
     max-width: 100%;
     margin-bottom: 10px;
-    pointer-events: none; 
-    -webkit-tap-highlight-color: transparent; 
-    user-select: none;   
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
 
   .grid-container {
@@ -573,37 +578,29 @@ footer {
 }
 
 .back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 50%;
+  position: absolute;
+  right: 40px;
+  top: 30%;
+  background: none !important;
+  border: none !important;
+  padding: 0;
   cursor: pointer;
-  z-index: 1000;
-  display: flex;
+  width: 45px !important;
+  height: 45px !important;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .back-to-top img {
-  width: 50%;
+  width: 40px;
   height: auto;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
 .back-to-top:hover {
-  transform: translateY(-5px) scale(1.1);
+  transform: translateY(-5px);
 }
 
 * {
