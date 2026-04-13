@@ -19,7 +19,7 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@ header {
 
 .header-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
