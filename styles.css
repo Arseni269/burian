@@ -443,12 +443,7 @@ footer {
   }
 
   .header-group {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-    margin: 20px auto;
+    display: none;
   }
 
   h3 {
