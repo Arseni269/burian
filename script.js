@@ -14,7 +14,7 @@ const gallerySettings = {
 const navLinks = document.querySelectorAll('.nav-link');
 document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname.split("/").pop();
- 
+
 
   navLinks.forEach(link => {
     if (link.getAttribute('href') === currentPath) {
@@ -50,8 +50,10 @@ if (grid) {
     }
 
     img.addEventListener('click', () => {
-      lightbox.classList.add('active');
-      updateLightbox(i);
+      if (window.innerWidth > 1150) {
+        lightbox.classList.add('active');
+        updateLightbox(i);
+      }
     });
     grid.appendChild(img);
   }
@@ -136,10 +138,9 @@ const scrollObserver = new IntersectionObserver((entries) => {
       navbar.classList.remove('scrolled');
     }
   });
-}, { 
+}, {
   threshold: 0,
-  rootMargin: "-50px 0px 0px 0px" 
+  rootMargin: "-50px 0px 0px 0px"
 });
 
 scrollObserver.observe(headerImage);
-
