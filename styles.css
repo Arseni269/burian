@@ -494,6 +494,8 @@ footer {
   display: flex;
   align-items: center;
   text-decoration: none;
+  overflow: hidden;
+  background: transparent;
 }
 
 .nav-mini-logo-wrapper.visible {
@@ -507,6 +509,11 @@ footer {
   width: auto;
   display: block;
   opacity: 1;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast; 
+  transform: scale(1.02);
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .nav-mini-text {
