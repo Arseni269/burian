@@ -3,6 +3,10 @@ html {
   height: auto;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
   background-color: #000000;
@@ -424,7 +428,7 @@ footer {
 .footer-content p {
   font-size: 14px;
   color: #888;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -462,10 +466,6 @@ footer {
   transform: translateY(-30px);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .nav-container {
   display: flex;
   align-items: center;
@@ -481,15 +481,6 @@ footer {
 .nav-hidden {
   transform: translateY(-100%);
 }
-
-/*.nav-mini-logo,
-.nav-mini-text {
-  opacity: 0;
-  transform: translateX(0);
-  transition: all 0.4s ease-in-out;
-  pointer-events: none;
-  white-space: nowrap;
-}*/
 
 .nav-mini-logo-wrapper {
   height: 30px;
