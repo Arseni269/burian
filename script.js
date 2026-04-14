@@ -127,7 +127,7 @@ scrollObserver.observe(headerImage);
 
 document.addEventListener("DOMContentLoaded", () => {
     const mainLogo = document.querySelector('.signature-logo');
-    const navLogo = document.querySelector('.nav-mini-logo');
+    const navLogo = document.querySelector('.nav-mini-logo-wrapper');
     const navText = document.querySelector('.nav-mini-text');
 
     const observerOptions = {
@@ -170,4 +170,6 @@ window.addEventListener('scroll', () => {
 
     lastScrollY = currentScrollY;
 });
+
+
 });
