@@ -126,50 +126,50 @@ const scrollObserver = new IntersectionObserver((entries) => {
 scrollObserver.observe(headerImage);
 
 document.addEventListener("DOMContentLoaded", () => {
-    const mainLogo = document.querySelector('.signature-logo');
-    const navLogo = document.querySelector('.nav-mini-logo-wrapper');
-    const navText = document.querySelector('.nav-mini-text');
+  const mainLogo = document.querySelector('.subtitle');
+  const navLogo = document.querySelector('.nav-mini-logo-wrapper');
+  const navText = document.querySelector('.nav-mini-text');
 
-    const observerOptions = {
-        root: null, 
-        threshold: 0 
-    };
+  const observerOptions = {
+    root: null,
+    threshold: 0
+  };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                navLogo.classList.add('visible');
-                navText.classList.add('visible');
-            } else {
-                navLogo.classList.remove('visible');
-                navText.classList.remove('visible');
-            }
-        });
-    }, observerOptions);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        navLogo.classList.add('visible');
+        navText.classList.add('visible');
+      } else {
+        navLogo.classList.remove('visible');
+        navText.classList.remove('visible');
+      }
+    });
+  }, observerOptions);
 
-    if (mainLogo) {
-        observer.observe(mainLogo);
-    }
+  if (mainLogo) {
+    observer.observe(mainLogo);
+  }
 
-let lastScrollY = window.scrollY;
-const navContainer = document.querySelector('.nav-container');
+  let lastScrollY = window.scrollY;
 
-window.addEventListener('scroll', () => {
+  const navContainer = document.querySelector('.nav-container');
+  window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
     const isMobile = window.innerWidth <= 1150;
 
     if (isMobile) {
-        if (currentScrollY > lastScrollY && currentScrollY > 150) {
-            navContainer.classList.add('nav-hidden');
-        } else {
-            navContainer.classList.remove('nav-hidden');
-        }
-    } else {
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        navContainer.classList.add('nav-hidden');
+      } else {
         navContainer.classList.remove('nav-hidden');
+      }
+    } else {
+      navContainer.classList.remove('nav-hidden');
     }
 
     lastScrollY = currentScrollY;
-});
+  });
 
 
 });

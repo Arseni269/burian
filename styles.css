@@ -14,7 +14,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: clip;
-  /* Stops the wiggle of navbar on mobile view */
   overflow-y: visible;
   width: 100%;
   position: relative;
